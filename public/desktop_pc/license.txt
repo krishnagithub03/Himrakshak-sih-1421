@@ -1,0 +1,11 @@
+Model Information:
+* title:	Indian Map Flag
+* source:	https://sketchfab.com/3d-models/indian-map-flag-5f5fa02e9e02420881536168a660c47b
+* author:	Sherbaz (https://sketchfab.com/sherlabs)
+
+Model License:
+* license type:	CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)
+* requirements:	Author must be credited. Commercial use is allowed.
+
+If you use this 3D model in your project be sure to copy paste this credit wherever you share it:
+This work is based on "Indian Map Flag" (https://sketchfab.com/3d-models/indian-map-flag-5f5fa02e9e02420881536168a660c47b) by Sherbaz (https://sketchfab.com/sherlabs) licensed under CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)
