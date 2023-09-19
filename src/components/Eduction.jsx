@@ -1,14 +1,28 @@
-import React from "react";
+import React, { useState } from "react";
+import { Link, Route,Routes, useNavigate } from "react-router-dom";
 import { education, services } from "../constants";
 import { SectionWrapper } from "../hoc";
 import { styles } from "../styles";
 import { motion } from "framer-motion";
 import { fadeIn,textVariant } from '../utils/motion';
-import {video} from "../assets";
+
+var isClicked = false;
 
 const Servicecard =({index,title, icon})=>{
+  const[Clicked,setClicked] = useState(false);
+
+  const navigate = useNavigate();
+
+  const navigateToAdmin = () =>{
+    navigate("/text");
+  };
+
+  const handleCardClick=()=>{
+    navigateToAdmin();
+    setClicked(!Clicked);
+  }
   return(
-    <div className="xs:w-[250px] w-full">
+    <div className="xs:w-[250px] w-full" onClick={handleCardClick}>
         <div
         options={{
           max:45,
@@ -26,16 +40,6 @@ const Servicecard =({index,title, icon})=>{
 
         </div>
    </div> 
-  );
-}
-
-const imgContent = ()=>{
-  return (
-    <>
-      <div>
-        <p>The best way to learn is by doing. I have worked on various</p>
-      </div>
-    </>
   );
 }
 
@@ -57,7 +61,7 @@ backcountry you need to Get the Forecast, Get the Gear, and Get the Training.
        className='mt-20 flex flex-wrap gap-10'
        >
         {education.map((edu, index)=>(
-          <Servicecard key={edu.title} index={index}{...edu} onClick={imgContent}/>
+          <Servicecard key={edu.title} index={index}{...edu}/>
         ))}
         </div>
         </>

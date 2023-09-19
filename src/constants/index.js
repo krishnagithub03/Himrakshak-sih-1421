@@ -3,6 +3,7 @@ import {
     icon_time,
     icon_speed,
     arvr,
+    adminicon,
     videoicon,
   } from "../assets";
   
@@ -19,10 +20,6 @@ import {
     {
       id: "Hiw",
       title: "How it Works?",
-    },
-    {
-      id : "admin",
-      title: "Admin"
     },
   ];
   
@@ -55,4 +52,9 @@ import {
       icon : videoicon,
     },
   ];
-  export { services, education};
+  const admin = [
+    {
+      icon: adminicon,
+    },
+  ];
+  export { services, education, admin};

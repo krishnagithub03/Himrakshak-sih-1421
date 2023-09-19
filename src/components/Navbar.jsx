@@ -1,15 +1,14 @@
 import React, { useEffect, useState } from "react";
-import { Link } from "react-router-dom";
-
+import { Link, Route,Routes, useNavigate } from "react-router-dom";
 import { styles } from "../styles";
 import { navLinks } from "../constants";
 import { menu, close, mounticon } from "../assets";
+// import Admin from "../pages/Admin";
 
 const Navbar = () => {
   const [active, setActive] = useState("");
   const [toggle, setToggle] = useState(false);
   const [scrolled, setScrolled] = useState(false);
-
   useEffect(() => {
     const handleScroll = () => {
       const scrollTop = window.scrollY;
@@ -25,6 +24,11 @@ const Navbar = () => {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
+  const navigate = useNavigate();
+
+  const navigateToAdmin = () =>{
+    navigate("/admin");
+  };
   return (
     <nav
       className={`${
@@ -60,8 +64,13 @@ const Navbar = () => {
               <a href={`#${nav.id}`}>{nav.title}</a>
             </li>
           ))}
+          <a 
+          onClick={navigateToAdmin}
+          className={`${
+                active === true ? "text-white" : "text-white"
+              } hover:text-blue-900 text-[18px] font-medium cursor-pointer`}
+          >Admin</a>
         </ul>
-
         <div className='sm:hidden flex flex-1 justify-end items-center'>
           <img
             src={toggle ? close : menu}
@@ -90,6 +99,12 @@ const Navbar = () => {
                   <a href={`#${nav.id}`}>{nav.title}</a>
                 </li>
               ))}
+            <a 
+          onClick={navigateToAdmin}
+          className={`${
+                active === true ? "text-white" : "text-secondary"
+              } hover:text-blue-900 text-[18px] font-medium cursor-pointer`}
+          >Admin</a>
             </ul>
           </div>
         </div>
