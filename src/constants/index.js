@@ -19,7 +19,7 @@ import {
     },
     {
       id: "Hiw",
-      title: "How it Works?",
+      title: "Maps",
     },
   ];
   

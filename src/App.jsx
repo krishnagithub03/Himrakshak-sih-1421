@@ -1,7 +1,7 @@
 import { BrowserRouter, Routes, Route, useNavigate } from "react-router-dom";
 import Admin from "./pages/Admin";
 import TextEdu from "./pages/TextEdu";
-import { About, Hero, Navbar,Education,Hiw } from './components';
+import { About, Hero, Navbar,Education,Hiw, Maps } from './components';
 
 const App = () => {
   return (
@@ -15,6 +15,7 @@ const App = () => {
         <About />
         <Education />
         <Hiw />
+        <Maps />
     </div>} />
     <Route path="/admin" element={
     <div className="py-10 bg-neutral-700">
@@ -30,7 +31,6 @@ const App = () => {
       </div>
     }/>
     </Routes>
-    
     </BrowserRouter>
   );
 }
