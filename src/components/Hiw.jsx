@@ -3,14 +3,21 @@ import { styles } from '../styles';
 import { fadeIn,textVariant } from '../utils/motion';
 import { SectionWrapper } from "../hoc";
 import { motion } from "framer-motion";
-import { MapContainer, TileLayer } from 'react-leaflet';
-import {maptiler} from "../constants";
+import { MapContainer, TileLayer, Marker, Popup} from 'react-leaflet';
+import {markers} from "../constants"
+import { Icon } from "leaflet";
+// import {maptiler} from "../constants";
 import "leaflet/dist/leaflet.css"
 
 const Hiw = () =>{
   const [center, setCenter] = useState({lat : 13.084622, lng: 80.248357 });
-  const ZOOM_LEVEL = 9;
+  const ZOOM_LEVEL = -100;
   const mapRef = useRef();
+
+  const customIcon = new Icon({
+    iconUrl:"https://cdn-icons-png.flaticon.com/128/1483/1483336.png",
+    iconSize : [48,48]
+  });
     return(
           <>
         <motion.div variants={textVariant()}>
@@ -21,7 +28,7 @@ const Hiw = () =>{
        variants = {fadeIn(",",0.1,1)}
        className='mt-4 text-secondary text-[17px] max-w-3xl leading-[30px]'
        >
-       Integrating Bing Maps allows us to visualize and track the current and historical trends of avalanches using location data. By overlaying avalanche incident points on the map, we can provide real-time information on areas prone to avalanches. Users can explore historical data to identify patterns, risk zones, and track changes over time. This integration not only enhances safety by providing timely warnings but also aids researchers and authorities in making informed decisions for avalanche mitigation and prevention strategies. It combines geographical context with vital data, improving our understanding of avalanche behavior and facilitating more effective disaster management.
+       Integrating Maps allows us to visualize and track the current and historical trends of avalanches using location data. By overlaying avalanche incident points on the map, we can provide real-time information on areas prone to avalanches. Users can explore historical data to identify patterns, risk zones, and track changes over time. This integration not only enhances safety by providing timely warnings but also aids researchers and authorities in making informed decisions for avalanche mitigation and prevention strategies. It combines geographical context with vital data, improving our understanding of avalanche behavior and facilitating more effective disaster management.
        </motion.p>
        <br />
        <br />
@@ -40,6 +47,13 @@ const Hiw = () =>{
         attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
         url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
       />
+      {markers.map((marker) =>(
+        <Marker position={marker.geocode} icon={customIcon}>
+        <Popup>
+        <h2>{marker.popUp}</h2>
+        </Popup>
+        </Marker>
+      ))}
       </MapContainer>
        </div>
         </>
