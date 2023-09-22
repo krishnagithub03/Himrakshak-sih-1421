@@ -57,4 +57,18 @@ import {
       icon: adminicon,
     },
   ];
-  export { services, education, admin};
+//  export default {
+//     maptiler: {
+//         url:
+//             "https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png",
+//         attribution:
+//             '&copy; <a href="https://www.maptiler.com/">MapTiler</a> &copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors',
+//     },
+// };
+const maptiler = [{
+    url: "https://api.maptiler.com/maps/basic-v2/256/{z}/{x}/{y}.png?key=Oeh4fYu2Ff7tSrnv4cAO"},
+    {
+    attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+  },
+  ];
+  export { services, education, admin, maptiler};

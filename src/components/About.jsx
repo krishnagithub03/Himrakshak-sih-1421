@@ -64,12 +64,11 @@ Avalanches can:
        >
        <ul>
         <li className='list-disc'>Use and carry safety equipment and rescue gear.</li>
-        <li className='list-disc'>If your partner or others are buried, call 9-1-1 and then begin to search if it is safe to do so.</li>
+        <li className='list-disc'>If your partner or others are buried, call (112)NATIONAL EMERGENCY NUMBER and then begin to search if it is safe to do so.</li>
         <li className='list-disc'>If you have the proper training, treat others for suffocation, hypothermia, traumatic injury or shock.</li>
        </ul>
        </motion.p>
     </>
   )
 }
-
 export default SectionWrapper(About,"about")

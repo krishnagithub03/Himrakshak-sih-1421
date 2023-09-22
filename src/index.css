@@ -92,11 +92,15 @@
   color: #ffffff;
 }
 
-.map {
+/* #map {
   width: 70vw;
   height: 80vh;
   margin: 10px;
   background: #555;
+} */
+.leaflet-container {
+  height: 600px;
+  width: 100%;
 }
 
 .black-gradient {
